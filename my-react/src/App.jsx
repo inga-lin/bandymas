@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';//2 bendraujam su serveriu
 import axios from 'axios';//2 bendraujam su serveriu
 import './App.css';
-import './bootstrap.css';
+//import './bootstrap.css';
 
 
 
@@ -24,20 +24,22 @@ function App() {
           <div className="titleee">
             <h2>Manikiuro sarasas</h2>
           </div>
-          <ul className="">
-                {
-                  manikiuras.map(m => <li className="list-group-item" key={m.id}>{m.vardas}</li>)//2 bendraujam su serveriu ir issitraukiam info 
-                }
-              </ul>
+          <div className="sarasas">
+            <ul className="">
+              {
+                 manikiuras.map(m => <li  key={m.id}>{m.vardas}</li>)//2 bendraujam su serveriu ir issitraukiam info 
+              }
+            </ul>
+          </div>
         </div>
         <div className="stulpeliu-vaikas1">
           <div className="titleee">
             <h2>Manikiuras</h2>
           </div>
-          <div className="">
-            <ul className="">
+          <div className="sarasas">
+            <ul >
               {
-                 manikiuras.map(m => <li className="list-group-item" key={m.id}>{m.vardas}</li>)//2 bendraujam su serveriu ir issitraukiam info 
+                 manikiuras.map(m => <li  key={m.id}>{m.vardas}</li>)//2 bendraujam su serveriu ir issitraukiam info 
               }
             </ul>
           </div>

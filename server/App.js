@@ -17,20 +17,20 @@ const con = mysql.createConnection({ //1-pati pradzia(irasom duomenu bazes pavad
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'sernas',   
+    database: 'manikiuras',   
 });
  
 app.get('/', (req, res) => {//1-pati pradzia
   res.send('Hello World!');
 })
 
-app.get('/trees-manager', (req, res) => {    //1-pati pradzia     <- http://localhost:3003/trees-manager api puslapio pavadinimas
+app.get('/manikiuro-salonas', (req, res) => { //2 bendraujam su serveriu   //1-pati pradzia     <- http://localhost:3003/trees-manager api puslapio pavadinimas
 // SELECT column1, column2, ...
 // FROM table_name;       trees <- lenteles pavadinimas(issitrint komentara sita nes nepasileis)
 const sql = `
 SELECT
 *
-FROM medziai
+FROM salonas
 `;
 con.query(sql, function(err, result) {
 if (err) throw err;

@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
+
+
+/*------------*/
+
+:root {
+  --pirma-spalva: #c2e1ff;
+  --antra-spalva: #889db3;
+  --trecia-spalva: #ffc2d7;
+  --trecia-spalva: #b38897;
+}
+.p-contai {
+  background-color: red;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.stulpeliu-tevas{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  background-color: pink;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.stulpeliu-vaikas1 {
+  background-color: royalblue;
+  /*padding: 10px 30px;*/
+  margin: 20px;
+  min-width: 400px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.titleee {
+  background-color: var(--pirma-spalva);
+  border: 3px solid var(--antra-spalva);
+  text-align: center;
+  width: 100%;
 }

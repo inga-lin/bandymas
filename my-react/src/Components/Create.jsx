@@ -14,9 +14,9 @@ function Create() {
                     <div className="forma">
                         <label>Manikiūro rūšys:</label>
                         <select className="form-control" >
-                            <option value="1">Klasikinis manikiūras</option>
-                            <option value="2">Prancūziškas manikiūras</option>
-                            <option value="3">Kombinuotas manikiūras</option>
+                            <option  value="1">Klasikinis manikiūras</option>
+                            <option  value="2">Prancūziškas manikiūras</option>
+                            <option  value="3">Kombinuotas manikiūras</option>
                          </select>
                     </div>
                     <div className="forma">
@@ -29,7 +29,7 @@ function Create() {
                     </div>
                     <div className="forma">
                         <label>Nuotrauka:</label>
-                        <input  type="file" className="form-control"  />
+                        <input  type="file" className="forma-foto"  />
                     </div>
                     <div className="forma-buttonss">
                         <button type="button" className="forma-buttons">Irasyti</button>

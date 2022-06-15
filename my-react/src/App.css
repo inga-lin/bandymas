@@ -1,13 +1,28 @@
 
 
 /*------------*/
-
+body {
+  font-family: 'Lobster', cursive;
+}
 :root {
   --pirma-spalva: #c2e1ff;
-  --antra-spalva: #889db3;
+  --antra-spalva: rgb(136, 157, 179);
   --trecia-spalva: #ffc2d7;
   --ketvirta-spalva: #b38897;
 }
+/*bendros detales*/
+button {
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px;
+}
+
+input {
+  border-radius: 20px;
+}
+/*bendros detales*/
 
 .stulpeliu-tevas{
   display: flex;
@@ -20,6 +35,17 @@
   margin: 20px;
   min-width: 400px;
   border-radius: 20px;
+}
+
+.sarasas, .titleee {
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
+}
+.stulpeliu-vaikas2 {
+  /*padding: 10px 30px;*/
+  margin: 20px;
+  min-width: 400px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px;
 }
 
 .titleee {
@@ -61,3 +87,30 @@ li:last-child {
   border: 3px solid var(--antra-spalva);
   border-radius: 0px 0px 0px 25px;
 }
+
+/*forma prazia*/
+.formos-vidus {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+}
+
+.forma {
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 20px;
+}
+
+.forma-buttons {
+  background-color: var(--pirma-spalva);
+  border-color: var(--antra-spalva);
+}
+
+.forma-buttonss {
+  display: flex;
+  justify-content: center;
+}
+/*forma pabaiga*/

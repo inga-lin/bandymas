@@ -58,7 +58,7 @@ const uuid = require('uuid');//1-pati pradzia
 app.use(express.urlencoded({//1-pati pradzia
     extended: true
 }));
-    
+     
 app.use(express.json());//1-pati pradzia
 
 const con = mysql.createConnection({ //1-pati pradzia(irasom duomenu bazes pavadinima)

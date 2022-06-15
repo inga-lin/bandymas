@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';//2 bendraujam su serveriu
 import axios from 'axios';//2 bendraujam su serveriu
 import './App.css';
+import Create from './Components/Create';
 //import './bootstrap.css';
 
 
@@ -20,21 +21,10 @@ function App() {
   return (
     <div className="p-contai">
       <div className="stulpeliu-tevas">
+        <Create></Create>
         <div className="stulpeliu-vaikas1">
           <div className="titleee">
-            <h2>Manikiuro sarasas</h2>
-          </div>
-          <div className="sarasas">
-            <ul className="">
-              {
-                 manikiuras.map(m => <li  key={m.id}>{m.vardas}</li>)//2 bendraujam su serveriu ir issitraukiam info 
-              }
-            </ul>
-          </div>
-        </div>
-        <div className="stulpeliu-vaikas1">
-          <div className="titleee">
-            <h2>Manikiuras</h2>
+            <h2>Manikiuras list</h2>
           </div>
           <div className="sarasas">
             <ul >

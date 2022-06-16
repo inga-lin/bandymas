@@ -8,7 +8,9 @@ import Create from './Components/Create';
 
 function App() {
 
-  const [manikiuras, setManikiuras] = useState([]);//2 bendraujam su serveriu ir issitraukiam info 
+  const [manikiuras, setManikiuras] = useState([]);//2 bendraujam su serveriu ir issitraukiam info
+  
+  const [CreateData, setCreateData] = useState({})
 
   useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info 
     axios.get('http://localhost:3003/manikiuro-salonas')
@@ -17,6 +19,11 @@ function App() {
       setManikiuras(res.data);//2 bendraujam su serveriu ir issitraukiam info 
     })
   },[])
+
+  //3.mygtuko paspaudimas- kuris is Create.jsx paims informaciaj (kai paspausim mygtuka) ir ja issius ir irasys i serveri
+  useEffect(() => {
+
+  },[CreateData])
 
   return (
     <div className="p-contai">

@@ -39,6 +39,29 @@ res.json(result);
 });
 
 
+///////////////////////
+//3.Create.jsx info isaugojimas serveryje
+app.post('/manikiuro-salonas', (req, res) => { //2 bendraujam su serveriu   //1-pati pradzia     <- http://localhost:3003/trees-manager api puslapio pavadinimas
+  
+  const sql = `
+  INSERT INTO salonas
+  (vardas, tipas, kaina, trukme, nuotrauka )
+  VALUES (?, ?, ?, ?, ?)
+  `;
+  con.query(
+    sql,
+    [req.body.vardas, req.body.tipas, !req.body.kaina ? 0 : req.body.kaina, !req.body.trukme ? 0 : req.body.trukme, req.body.nuotrauka],
+    (err, results) => {
+      if (err) {
+        throw err;
+      }
+      res.send(results);
+    }
+  );
+});
+////////////////////////////
+
+
 
 app.listen(port, () => {//1-pati pradzia
   console.log(`Example app listening on port ${port}`);

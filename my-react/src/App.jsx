@@ -10,7 +10,7 @@ function App() {
 
   const [manikiuras, setManikiuras] = useState([]);//2 bendraujam su serveriu ir issitraukiam info
   
-  const [CreateData, setCreateData] = useState({})
+  const [createData, setCreateData] = useState(null);//3.mygtuko paspaudimas- kuris is Create.jsx paims informaciaj (kai paspausim mygtuka) ir ja issius ir irasys i serveri
 
   useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info 
     axios.get('http://localhost:3003/manikiuro-salonas')
@@ -20,15 +20,27 @@ function App() {
     })
   },[])
 
+
+
+
   //3.mygtuko paspaudimas- kuris is Create.jsx paims informaciaj (kai paspausim mygtuka) ir ja issius ir irasys i serveri
   useEffect(() => {
+    if (null === createData) { //3)jeigu createData yra === null nieko nedarom ir einam lauk is cia
+      return;
+    }
+    axios.post('http://localhost:3003/manikiuro-salonas', createData)//3)kai jis  jau tures kazka naujo tai ta nauja info dedam i 'http://localhost:3003/trees-manager', createData //post-isiusti
+    .then(res => {
+      console.log(res);  //3)console.log(res) pasiziurim ka mums servas atsakys
+     }); 
+  },[createData])
 
-  },[CreateData])
+
+
 
   return (
     <div className="p-contai">
       <div className="stulpeliu-tevas">
-        <Create></Create>
+        <Create setCreateData={setCreateData}></Create>
         <div className="stulpeliu-vaikas1">
           <div className="titleee">
             <h2>Manikiuras list</h2>

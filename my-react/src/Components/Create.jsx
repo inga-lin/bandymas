@@ -1,12 +1,24 @@
 import { useState } from "react";
 
-function Create() {
+function Create({setCreateData}) {
     //kiek laukeliu returne tiek turim tureti useState(react xxx)
     const [ vardas, setVardas] = useState('');
     const [ tipas, setTipas] = useState("1");
     const [ kaina, setKaina] = useState('');
     const [ trukme, setTrukme] = useState('');
     const [ nuotrauka, setNuotrauka] = useState('');
+
+
+    //kas nutiks kai paspausiu mygrtuka
+    const buttonHandler = () => {
+        setCreateData({
+            vardas,
+            tipas,
+            kaina,
+            trukme,
+            nuotrauka
+        });
+    }
 
     const inputHandler =(e, kuriKontruoliuosim) => {
         switch(kuriKontruoliuosim) {
@@ -61,7 +73,7 @@ function Create() {
                         <input  type="file" className="forma-foto" value={nuotrauka}  onChange={e => inputHandler(e, 'nuotrauka')}/>
                     </div>
                     <div className="forma-buttonss">
-                        <button type="button" className="forma-buttons">Irasyti</button>
+                        <button type="button" className="forma-buttons" onClick={buttonHandler}>Irasyti</button>
                     </div>
                 </div>
             </div>

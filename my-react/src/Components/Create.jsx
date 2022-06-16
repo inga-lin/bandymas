@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+//3
 function Create({setCreateData}) {
     //kiek laukeliu returne tiek turim tureti useState(react xxx)
     const [ vardas, setVardas] = useState('');
@@ -9,7 +9,7 @@ function Create({setCreateData}) {
     const [ nuotrauka, setNuotrauka] = useState('');
 
 
-    //kas nutiks kai paspausiu mygrtuka
+    //3.kas nutiks kai paspausiu mygtuka(issisaugos sita info)
     const buttonHandler = () => {
         setCreateData({
             vardas,

@@ -23,6 +23,7 @@ function App() {
 
 
 
+
   //3.mygtuko paspaudimas- kuris is Create.jsx paims informaciaj (kai paspausim mygtuka) ir ja issius ir irasys i serveri
   useEffect(() => {
     if (null === createData) { //3)jeigu createData yra === null nieko nedarom ir einam lauk is cia
@@ -37,10 +38,11 @@ function App() {
 
 
 
+
   return (
     <div className="p-contai">
       <div className="stulpeliu-tevas">
-        <Create setCreateData={setCreateData}></Create>
+        <Create setCreateData={setCreateData}></Create>{/*3.setCreateData*/}
         <div className="stulpeliu-vaikas1">
           <div className="titleee">
             <h2>Manikiuras list</h2>
@@ -48,7 +50,7 @@ function App() {
           <div className="sarasas">
             <ul >
               {
-                 manikiuras.map(m => <li  key={m.id}>{m.vardas}</li>)//2 bendraujam su serveriu ir issitraukiam info 
+                 manikiuras.map(m => <li  key={m.id}>{m.vardas}-{m.tipas}-{m.kaina}-{m.trukme}-{m.nuotrauka}</li>)//2 bendraujam su serveriu ir issitraukiam info 
               }
             </ul>
           </div>

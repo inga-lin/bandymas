@@ -50,7 +50,7 @@ app.post('/manikiuro-salonas', (req, res) => { //2 bendraujam su serveriu   //1-
   `;
   con.query(
     sql,
-    [req.body.vardas, req.body.tipas, !req.body.kaina ? 0 : req.body.kaina, !req.body.trukme ? 0 : req.body.trukme, req.body.nuotrauka],
+    [req.body.vardas, req.body.tipas, !req.body.kaina ? 0 : req.body.kaina, !req.body.trukme ? 0 : req.body.trukme, req.body.nuotrauka], //jeigu tuscias trukmes ir kaina laukelis bus 0
     (err, results) => {
       if (err) {
         throw err;

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';//2 bendraujam su serveriu
 import axios from 'axios';//2 bendraujam su serveriu
 import './App.css';
 import Create from './Components/Create';
+import ManikiuroListoAtvaizdavimas from './Components/ManikiuroListoAtvaizdavimas';
 //import './bootstrap.css';
 
 
@@ -54,7 +55,7 @@ function App() {
           <div className="sarasas">
             <ul >
               {
-                 manikiuras.map(m => <li  key={m.id}>{m.vardas}-{m.tipas}-{m.kaina}-{m.trukme}-{m.nuotrauka}</li>)//2 bendraujam su serveriu ir issitraukiam info 
+                 manikiuras.map(m => <ManikiuroListoAtvaizdavimas key={m.id} manikiuras={m}></ManikiuroListoAtvaizdavimas>)//2 bendraujam su serveriu ir issitraukiam info//5. ManikiuroListoAtvaizdavimas
               }
             </ul>
           </div>

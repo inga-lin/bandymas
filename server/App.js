@@ -60,6 +60,22 @@ app.post('/manikiuro-salonas', (req, res) => { //2 bendraujam su serveriu   //1-
   );
 });
 ////////////////////////////
+////////////////////////////
+//6.Istrinimo mygtukas is ManikiuroListoAtvaizdavimas.jsx kuris istrins visa jo info
+app.delete('/manikiuro-salonas/:id', (req, res) => { //delytinam is trees lnteles kurio id yra ?(kazkoks)
+  const sql = `
+      DELETE FROM salonas
+      WHERE id = ?
+      `;
+  con.query(sql, [req.params.id], (err, result) => { //[req.params.id] yra = '/trees-manager/:id'
+      if (err) {
+          throw err;
+      }
+      res.send(result);
+  })
+})
+////////////////////////////
+////////////////////////////
 
 
 

@@ -16,6 +16,12 @@ function App() {
   //4. vieta is kurios gausim sarasiuka
   const [lastUpdate, setLastUpdate] = useState(Date.now()); //4.cia bus laikas kada pirma karta reactasparsisiunte duomenis
 
+  ////6.Istrinimo mygtukas is ManikiuroListoAtvaizdavimas.jsx kuris istrins visa eilutes info 
+  const[istrintiId, setIstrintiId] = useState(null);
+
+  ////7.redagavimao mygtukas ManikiuroListoAtvaizdavimas.jsx ir modalo atvaizdavimas
+  const [redaguotiData, setRedaguotiData] = useState(null);//10. ir ji perduosim per Modal ir ten pasiimsim
+
   useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info is savo D.B.
     axios.get('http://localhost:3003/manikiuro-salonas')
     .then(res => {
@@ -43,6 +49,34 @@ function App() {
 
 
 
+  ////6.Istrinimo mygtukas is ManikiuroListoAtvaizdavimas.jsx kuris istrins visa jo info
+  useEffect(() => {
+    if (null === istrintiId) { //6)jeigu createData yra === null nieko nedarom ir einam lauk is cia
+      return;
+    }
+    axios.delete('http://localhost:3003/manikiuro-salonas/' + istrintiId.id, ) //!!!!nepamirsti gale prideti /  prie manikiuro-salonas/  
+    .then(res => {
+      console.log(res); 
+      setLastUpdate(Date.now()); //4
+     }); 
+  },[istrintiId]);
+
+
+
+ ////7.redagavimao mygtukas ManikiuroListoAtvaizdavimas.jsx ir modalo atvaizdavimas
+ useEffect(() => {
+  if (null === redaguotiData) {
+    return;
+  }
+  axios.put('http://localhost:3003/manikiuro-salonas/'+ redaguotiData.id, redaguotiData) //
+  .then(res => {
+    console.log(res);
+    setLastUpdate(Date.now());//7paskutinis pakeitimas turi buti dabartine Data
+  });
+
+},[redaguotiData]);
+
+
 
   return (
     <div className="p-contai">
@@ -55,7 +89,7 @@ function App() {
           <div className="sarasas">
             <ul >
               {
-                 manikiuras.map(m => <ManikiuroListoAtvaizdavimas key={m.id} manikiuras={m}></ManikiuroListoAtvaizdavimas>)//2 bendraujam su serveriu ir issitraukiam info//5. ManikiuroListoAtvaizdavimas
+                 manikiuras.map(m => <ManikiuroListoAtvaizdavimas key={m.id} manikiuras={m}setIstrintiId={setIstrintiId}></ManikiuroListoAtvaizdavimas>)//2 bendraujam su serveriu ir issitraukiam info//5. ManikiuroListoAtvaizdavimas//6.setIstrintiId istrinsim eilutes info
               }
             </ul>
           </div>

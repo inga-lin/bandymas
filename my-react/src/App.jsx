@@ -11,14 +11,17 @@ function App() {
   const [manikiuras, setManikiuras] = useState([]);//2 bendraujam su serveriu ir issitraukiam info
   
   const [createData, setCreateData] = useState(null);//3.mygtuko paspaudimas- kuris is Create.jsx paims informaciaj (kai paspausim mygtuka) ir ja issius ir irasys i serveri
+ 
+  //4. vieta is kurios gausim sarasiuka
+  const [lastUpdate, setLastUpdate] = useState(Date.now()); //4.cia bus laikas kada pirma karta reactasparsisiunte duomenis
 
-  useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info 
+  useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info is savo D.B.
     axios.get('http://localhost:3003/manikiuro-salonas')
     .then(res => {
       console.log(res.data);//2 bendraujam su serveriu ir issitraukiam info 
       setManikiuras(res.data);//2 bendraujam su serveriu ir issitraukiam info 
     })
-  },[])
+  },[lastUpdate]);//4
 
 
 
@@ -32,8 +35,9 @@ function App() {
     axios.post('http://localhost:3003/manikiuro-salonas', createData)//3)kai jis  jau tures kazka naujo tai ta nauja info dedam i 'http://localhost:3003/trees-manager', createData //post-isiusti
     .then(res => {
       console.log(res);  //3)console.log(res) pasiziurim ka mums servas atsakys
+      setLastUpdate(Date.now()); //4
      }); 
-  },[createData])
+  },[createData]);
 
 
 

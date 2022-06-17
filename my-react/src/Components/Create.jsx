@@ -18,9 +18,14 @@ function Create({setCreateData}) {
             trukme,
             nuotrauka
         });
+        setVardas('');//cia kai uzpildysim lentele ji nusiresetins i tuscius laukelius
+        setTipas('1');
+        setKaina('');
+        setTrukme('');
+        setNuotrauka('');
     }
 
-    const inputHandler =(e, kuriKontruoliuosim) => {
+    const inputHandler =(e, kuriKontruoliuosim) => {//kontroliuosim ivedimo laukelius
         switch(kuriKontruoliuosim) {
             case 'vardas':
                 setVardas(e.target.value);

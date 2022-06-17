@@ -39,7 +39,7 @@ res.json(result);
 });
 
 
-///////////////////////
+////////////////////////
 //3.Create.jsx info isaugojimas serveryje
 app.post('/manikiuro-salonas', (req, res) => { //2 bendraujam su serveriu   //1-pati pradzia     <- http://localhost:3003/trees-manager api puslapio pavadinimas
   

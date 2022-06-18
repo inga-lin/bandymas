@@ -1,4 +1,4 @@
-function ManikiuroListoAtvaizdavimas({manikiuras, setIstrintiId}) {
+function ManikiuroListoAtvaizdavimas({manikiuras, setIstrintiId, setRedaguotiModalData}) {
 //5. ManikiuroListoAtvaizdavimas
     return(
         <li>
@@ -10,7 +10,7 @@ function ManikiuroListoAtvaizdavimas({manikiuras, setIstrintiId}) {
                     <span>{manikiuras.trukme} val.</span>
                 </div>
                 <div className="mani-listas">
-                    <button type="button" className="manikiuro-buttons redaguoti" onClick={()=>(manikiuras)}>Redaguoti</button>
+                    <button type="button" className="manikiuro-buttons redaguoti" onClick={()=>setRedaguotiModalData(manikiuras)}>Redaguoti</button>{/*7.Modalo iskvietimas*/}
                     <button type="button" className="manikiuro-buttons istrinti" onClick={()=>setIstrintiId({id:manikiuras.id})}>Istrinti</button> {/*////6.Istrinimo mygtukas is ManikiuroListoAtvaizdavimas.jsx kuris istrins visa jo info*/}
                 </div>
             </div>

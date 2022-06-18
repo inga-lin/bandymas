@@ -39,18 +39,18 @@ res.json(result);
 });
 
 
-////////////////////////
+/////////////////////////
 //3.Create.jsx info isaugojimas serveryje
 app.post('/manikiuro-salonas', (req, res) => { //2 bendraujam su serveriu   //1-pati pradzia     <- http://localhost:3003/trees-manager api puslapio pavadinimas
   
   const sql = `
   INSERT INTO salonas
-  (vardas, tipas, kaina, trukme, nuotrauka )
-  VALUES (?, ?, ?, ?, ?)
+  (vardas, tipas, kaina, trukme)
+  VALUES (?, ?, ?, ?)
   `;
   con.query(
     sql,
-    [req.body.vardas, req.body.tipas, !req.body.kaina ? 0 : req.body.kaina, !req.body.trukme ? 0 : req.body.trukme, req.body.nuotrauka], //jeigu tuscias trukmes ir kaina laukelis bus 0
+    [req.body.vardas, req.body.tipas, !req.body.kaina ? 0 : req.body.kaina, !req.body.trukme ? 0 : req.body.trukme], //jeigu tuscias trukmes ir kaina laukelis bus 0
     (err, results) => {
       if (err) {
         throw err;
@@ -76,8 +76,27 @@ app.delete('/manikiuro-salonas/:id', (req, res) => { //delytinam is trees lntele
 })
 ////////////////////////////
 ////////////////////////////
-
-
+//8
+//buvo tik saugojimas be nuotraukos MODALO
+app.put("/manikiuro-salonas/:id", (req, res) => {
+const sql = `
+UPDATE salonas
+SET vardas = ?, tipas = ?, kaina = ?, trukme = ? 
+WHERE id = ?
+`;
+  con.query(
+  sql,
+  [req.body.vardas, req.body.tipas, req.body.kaina, req.body.trukme,  req.params.id],
+  (err, results) => {
+    if (err) {
+      throw err;
+    }
+    res.send(results);
+  }
+);
+});
+/////////////////////////
+//////////////////////////
 
 app.listen(port, () => {//1-pati pradzia
   console.log(`Example app listening on port ${port}`);

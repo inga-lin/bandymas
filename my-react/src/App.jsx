@@ -25,7 +25,7 @@ function App() {
 
   //8 Create paspaudus redaguoti mygtuka.....
   const [redaguotiCreateData, setRedaguotiCreateData] = useState(null);
-
+ //Read
   useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info is savo D.B.///////
     axios.get('http://localhost:3003/manikiuro-salonas')
     .then(res => {
@@ -37,7 +37,7 @@ function App() {
 
 
 
-
+  //Create
   //3.mygtuko paspaudimas- kuris is Create.jsx paims informaciaj (kai paspausim mygtuka) ir ja issius ir irasys i serveri////
   useEffect(() => {
     if (null === createData) { //3)jeigu createData yra === null nieko nedarom ir einam lauk is cia
@@ -52,7 +52,7 @@ function App() {
 
 
 
-
+//deletle
   ////6.Istrinimo mygtukas is ManikiuroListoAtvaizdavimas.jsx kuris istrins visa jo info///
   useEffect(() => {
     if (null === istrintiId) { //6)jeigu createData yra === null nieko nedarom ir einam lauk is cia
@@ -81,7 +81,7 @@ function App() {
 //},[setCreateData]);
 
 
-
+//edit(redaguoti)
 ////8.Create paspaudus redaguoti(edit) Modale keiciami duomenys ir atvaizduojami Creat o liste/////
 useEffect(() => {
   if (null === redaguotiCreateData) { //3)jeigu createData yra === null nieko nedarom ir einam lauk is cia

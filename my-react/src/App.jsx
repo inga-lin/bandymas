@@ -26,7 +26,7 @@ function App() {
   //8 Create paspaudus redaguoti mygtuka.....
   const [redaguotiCreateData, setRedaguotiCreateData] = useState(null);
 
-  useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info is savo D.B.
+  useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info is savo D.B.///////
     axios.get('http://localhost:3003/manikiuro-salonas')
     .then(res => {
       console.log(res.data);//2 bendraujam su serveriu ir issitraukiam info 
@@ -38,7 +38,7 @@ function App() {
 
 
 
-  //3.mygtuko paspaudimas- kuris is Create.jsx paims informaciaj (kai paspausim mygtuka) ir ja issius ir irasys i serveri
+  //3.mygtuko paspaudimas- kuris is Create.jsx paims informaciaj (kai paspausim mygtuka) ir ja issius ir irasys i serveri////
   useEffect(() => {
     if (null === createData) { //3)jeigu createData yra === null nieko nedarom ir einam lauk is cia
       return;
@@ -53,7 +53,7 @@ function App() {
 
 
 
-  ////6.Istrinimo mygtukas is ManikiuroListoAtvaizdavimas.jsx kuris istrins visa jo info
+  ////6.Istrinimo mygtukas is ManikiuroListoAtvaizdavimas.jsx kuris istrins visa jo info///
   useEffect(() => {
     if (null === istrintiId) { //6)jeigu createData yra === null nieko nedarom ir einam lauk is cia
       return;
@@ -68,21 +68,21 @@ function App() {
 
 
  ////7.redagavimao mygtukas ManikiuroListoAtvaizdavimas.jsx ir modalo atvaizdavimas
- useEffect(() => {
-  if (null === setCreateData) {
-    return;
-  }
-  axios.put('http://localhost:3003/manikiuro-salonas/'+ setCreateData.id, setCreateData) //
-  .then(res => {
-    console.log(res);
-    setLastUpdate(Date.now());//7paskutinis pakeitimas turi buti dabartine Data
-  });
+ //useEffect(() => {
+  //if (null === setCreateData) {
+ //   return;
+  //}
+ // axios.put('http://localhost:3003/manikiuro-salonas/'+ setCreateData.id, setCreateData) //
+  //.then(res => {
+  //  console.log(res);
+ //   setLastUpdate(Date.now());//7paskutinis pakeitimas turi buti dabartine Data
+ // });
+//
+//},[setCreateData]);
 
-},[setCreateData]);
 
 
-
-////8.Create paspaudus redaguoti(edit) Modale keiciami duomenys ir atvaizduojami Creat o liste
+////8.Create paspaudus redaguoti(edit) Modale keiciami duomenys ir atvaizduojami Creat o liste/////
 useEffect(() => {
   if (null === redaguotiCreateData) { //3)jeigu createData yra === null nieko nedarom ir einam lauk is cia
     return;

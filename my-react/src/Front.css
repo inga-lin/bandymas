@@ -50,10 +50,11 @@ a {
    background-color: rgb(238, 255, 127);
    width: 30%;
    padding: 10px;
-   
+
 }
 .list:hover {
-   
+    transform: scale(1.04,1.04); /*padidinam kvadratus kai uzvedam pelyte*/
+    transition-duration:  0.1s;/*padidinam kvadratus kai uzvedam pelyte*/
 }
 
 @media (max-width: 1200px){

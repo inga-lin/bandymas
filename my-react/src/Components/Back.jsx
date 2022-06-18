@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';//2 bendraujam su serveriu
 import axios from 'axios';//2 bendraujam su serveriu
 import '../Back.css';
-import Create from './Create';
-import ManikiuroListoAtvaizdavimas from './ManikiuroListoAtvaizdavimas';
-import Modal from './Modal';
+import Create from './Back/Create';
+import ManikiuroListoAtvaizdavimas from './Back/ManikiuroListoAtvaizdavimas';
+import Modal from './Back/Modal';
 //import './bootstrap.css';
 
 

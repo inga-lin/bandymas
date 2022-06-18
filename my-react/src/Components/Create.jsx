@@ -6,7 +6,7 @@ function Create({setCreateData}) {
     const [ tipas, setTipas] = useState("1");
     const [ kaina, setKaina] = useState('');
     const [ trukme, setTrukme] = useState('');
-    //const [ nuotrauka, setNuotrauka] = useState('');
+    const [ nuotrauka, setNuotrauka] = useState('');
 
 
     //3.kas nutiks kai paspausiu mygtuka(issisaugos sita info)
@@ -16,7 +16,7 @@ function Create({setCreateData}) {
             tipas,
             kaina,
             trukme,
-           // nuotrauka
+            nuotrauka
         });
         setVardas('');//cia kai uzpildysim lentele ji nusiresetins i tuscius laukelius
         setTipas('1');
@@ -39,9 +39,9 @@ function Create({setCreateData}) {
             case 'trukme':
                 setTrukme(e.target.value.replace(/,/g, '.'));
                 break;
-           // case 'nuotrauka':
-               // setNuotrauka(e.target.value);
-               // break;
+            case 'nuotrauka':
+                setNuotrauka(e.target.value);
+                break;
             default:
         }
     }
@@ -75,8 +75,8 @@ function Create({setCreateData}) {
                     </div>
                     <div className="forma">
                         <label>Nuotrauka:</label>
-                        {/*<input  type="file" className="forma-foto" value={nuotrauka}  onChange={e => inputHandler(e, 'nuotrauka')}/>
-                    */}</div>
+                        <input  type="file" className="forma-foto" value={nuotrauka}  onChange={e => inputHandler(e, 'nuotrauka')}/>
+                    </div>
                     <div className="forma-buttonss">
                         <button type="button" className="forma-buttons" onClick={buttonHandler}>Irasyti</button>
                     </div>

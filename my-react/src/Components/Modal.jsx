@@ -20,7 +20,7 @@ function Modal ({setRedaguotiModalData, redaguotiModalData, setRedaguotiCreateDa
             //nuotrauka,
             id //cia taip reik
         });
-        setRedaguotiModalData(null)
+        setRedaguotiModalData(null);//padaro kad uzsidarytu modalas
     }
 
     const inputHandler =(e, kuriKontruoliuosim) => {//kontroliuosim ivedimo laukelius
@@ -105,8 +105,8 @@ function Modal ({setRedaguotiModalData, redaguotiModalData, setRedaguotiCreateDa
                                 */}</div>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className=" save" onClick={buttonHandler}>Išsaugoti</button>
-                                <button type="button" className=" cancel" onClick={() => setRedaguotiModalData(null)}>Uždaryti</button>
+                                <button type="button" className=" save" onClick={buttonHandler}>Išsaugoti</button>{/*onClick={buttonHandler} jei nieko nereik perduoti neviniojam i popieriuka*/}
+                                <button type="button" className=" cancel" onClick={() => setRedaguotiModalData(null)}>Uždaryti</button>{/*onClick={() => setRedaguotiModalData(null)} jei reik ka nors perduoti viniojam i popieriuka*/}
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 function ManikiuroListoAtvaizdavimas({manikiuras, setIstrintiId, setRedaguotiModalData}) {
 //5. ManikiuroListoAtvaizdavimas
     return(
-        <li>
+        <li className='li'>
             <div className="manikiuro-listas">
                 <div className="mani-listas">
                     <span>{manikiuras.vardas}</span>

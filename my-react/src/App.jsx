@@ -1,9 +1,16 @@
 import Back from "./Components/Back";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import Front from "./Components/Front";
 
 function App() {
 
   return (
-    <Back></Back>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Front/>}/>
+        <Route path='admin' element={<Back/>}></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

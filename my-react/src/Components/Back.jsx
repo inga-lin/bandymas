@@ -105,7 +105,7 @@ useEffect(() => {
             <h2>Manikiuras list</h2>
           </div>
           <div className="sarasas">
-            <ul >
+            <ul className='ul' >
               {
                  manikiuras.map(m => <ManikiuroListoAtvaizdavimas key={m.id} manikiuras={m}setIstrintiId={setIstrintiId} setRedaguotiModalData={setRedaguotiModalData}></ManikiuroListoAtvaizdavimas>)//2 bendraujam su serveriu ir issitraukiam info//5. ManikiuroListoAtvaizdavimas//6.setIstrintiId istrinsim eilutes info
               }

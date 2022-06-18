@@ -5,10 +5,11 @@ body {
   font-family: 'Lobster', cursive;
 }
 :root {
-  --pirma-spalva: #c2e1ff;
+  --pirma-spalva: rgb(194, 225, 255);
   --antra-spalva: rgb(136, 157, 179);
-  --trecia-spalva: #ffc2d7;
+  --trecia-spalva: rgb(255, 194, 215);
   --ketvirta-spalva: #b38897;
+  --penkta-spalva: linear-gradient(260deg, rgb(194, 225, 255), rgb(255, 194, 215));
 }
 /*bendros detales*/
 button {
@@ -85,20 +86,26 @@ h2 {
   padding: 20px;
 }
 
+.ul {
+  list-style-type: none;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
 ul {
   list-style-type: none;
   margin-block-start: 0px;
   margin-block-end: 0px;
 }
 
-li{
+.li{
   border-bottom: 1px solid var(--antra-spalva);
   width: 90%;
   padding: 10px;
   margin-left: -10px;
 }
 
-li:last-child {
+.li:last-child {
   border-bottom: none;
 }
 

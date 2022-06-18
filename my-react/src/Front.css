@@ -1,0 +1,80 @@
+/*navbar*/
+.navbar {
+   display: flex;
+   justify-content: space-between;
+   padding: 20px;
+   background-image: var(--penkta-spalva);
+   border: 2px solid var(--antra-spalva);
+   border-color:  var(--antra-spalva);
+   border-radius: 0px 0px 25px 25px;
+   margin-bottom: 30px;
+}
+
+.navbar-man{
+   display: flex;
+   gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: var(--trecia-spalva);
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    transition: 500ms;
+}
+
+.nav-linkk:hover {
+    color: var(--pirma-spalva);
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    transition: 500ms;
+}
+
+/*navbar*/
+
+/*body*/
+
+.ull{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 30px;
+    align-content: flex-start;
+}
+
+.list {
+   background-color: rgb(238, 255, 127);
+   width: 30%;
+   padding: 10px;
+   
+}
+.list:hover {
+   
+}
+
+@media (max-width: 1200px){
+   .list{
+    background-color: red;
+    width: 40%;
+   }
+
+   .ull {
+    justify-content: space-around;
+   }
+}
+
+@media (max-width: 800px){
+    .list{
+     background-color: rgb(13, 102, 10);
+     width: 80%;
+    }
+ 
+    .ull {
+     justify-content: space-around;
+    }
+ }
+/*body*/

@@ -22,8 +22,10 @@ function App() {
 
   ////7.redagavimao mygtukas ManikiuroListoAtvaizdavimas.jsx ir modalo atvaizdavimas
   const [redaguotiModalData, setRedaguotiModalData] = useState(null);//10. ir ji perduosim per Modal ir ten pasiimsim
+
   //8 Create paspaudus redaguoti mygtuka.....
   const [redaguotiCreateData, setRedaguotiCreateData] = useState(null);
+
   useEffect(() => { //2 bendraujam su serveriu ir issitraukiam info is savo D.B.
     axios.get('http://localhost:3003/manikiuro-salonas')
     .then(res => {
@@ -112,7 +114,7 @@ useEffect(() => {
         </div>
       </div>
     </div>
-    <Modal setRedaguotiModalData={setRedaguotiModalData} redaguotiModalData={redaguotiModalData} setRedaguotiCreateData={setRedaguotiCreateData}></Modal>
+    <Modal setRedaguotiModalData={setRedaguotiModalData} redaguotiModalData={redaguotiModalData} setRedaguotiCreateData={setRedaguotiCreateData}></Modal>{/*8.setRedaguotiCreateData //7.redaguotiModalData//7.setRedaguotiModalData*/}
     </>
   );
 }

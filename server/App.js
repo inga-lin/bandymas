@@ -103,6 +103,46 @@ WHERE id = ?
 });
 /////////////////////////
 //////////////////////////
+//FRONTO DALIS------------------->
+/////////////////////////
+//////////////////////////
+//a reikalingas <Link> kad all rodytu visus ManikiuroListoAtvaizdavimasFronte o :cat tik pagal atitinkama tipa
+app.get('/manikiuro-list/all', (req, res) => { // <- http://localhost:3003/ 
+  // SELECT column1, column2, ...
+  // FROM table_name;       trees <- lenteles pavadinimas(issitrint komentara sita nes nepasileis)
+  const sql = `
+  SELECT
+  *
+  FROM salonas
+  `;
+  con.query(sql, function(err, result) {
+  if (err) throw err;
+  res.json(result);
+  });
+  });
+//+
+//a.biski pakeiciam Fronts.jsx useEffect
+//a reikalingas <Link> kad all rodytu visus ManikiuroListoAtvaizdavimasFronte o :cat tik pagal atitinkama tipas 'klasikinis','prancuziskas','kombinuotas'
+//SELECT column_name(s) <- cia isvardinam abieju lenteliu stulpelius
+app.get("/manikiuro-list/:cat", (req, res) => { //cat yra parametras jeigu tai nera all iesko 'klasikinis','prancuziskas','kombinuotas' ir kazkuri is ju atidaro
+  if (req.params.cat != "all") {
+  const sql = `
+          SELECT
+          *
+          FROM salonas
+          WHERE tipas = ?
+      `;
+  con.query(sql, [['klasikinis','prancuziskas','kombinuotas'].indexOf(req.params.cat) + 1], (err, result) => { //b.mes gaunam zodzius ir juos paverciam i indeksa
+    if (err) throw err;
+    res.send(result);
+  });
+}
+});
+/////////////////////////////
+//////////////////////////////
+
+
+
 
 app.listen(port, () => {//1-pati pradzia
   console.log(`Example app listening on port ${port}`);

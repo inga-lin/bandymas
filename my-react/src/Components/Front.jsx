@@ -19,8 +19,8 @@ function Front() {
 
     return(
     <>
-        <div className="p-contai">
-        <div className="container1">
+        <div className="p-contai con-pagri">
+        <div className="container1 ">
                 <nav className="navbar">
                     <a className="nav-linkk" href="/">Manikiūras Tau...</a>
                     <div className="navbar-man ">
@@ -31,10 +31,10 @@ function Front() {
             </div>
             <div className="stulpeliu-tevass">
                 <div className="stulpeliu-vaikas1">
-                    <div className="titleee">
+                    <div className="titleee titleees">
                         <h2>Manikiūrai</h2>
                     </div>
-                    <div className="sarasas">
+                    <div className="sarasass sar">
                         <ul className="ull">
                             {
                                 manikiuras.map(m => <ManikiuroListoAtvaizdavimasFronte key={m.id} manikiuras={m}></ManikiuroListoAtvaizdavimasFronte>)//2 bendraujam su serveriu ir issitraukiam info//5. ManikiuroListoAtvaizdavimas//6.setIstrintiId istrinsim eilutes info

@@ -23,7 +23,9 @@ const con = mysql.createConnection({ //1-pati pradzia(irasom duomenu bazes pavad
 app.get('/', (req, res) => {//1-pati pradzia
   res.send('Hello World!');
 })
-
+////////////////////////////
+////////////////////////////
+//Read //2 bendraujam su serveriu ir issitraukiam info is savo D.B.///////
 app.get('/manikiuro-salonas', (req, res) => { //2 bendraujam su serveriu   //1-pati pradzia     <- http://localhost:3003/trees-manager api puslapio pavadinimas
 // SELECT column1, column2, ...
 // FROM table_name;       trees <- lenteles pavadinimas(issitrint komentara sita nes nepasileis)
@@ -38,8 +40,10 @@ res.json(result);
 });
 });
 
-
+////////////////////////////
 /////////////////////////
+  //Create lenteles itasymas
+  //3.mygtuko paspaudimas- kuris is Create.jsx paims informaciaj (kai paspausim mygtuka) ir ja issius ir irasys i serveri////
 //3.Create.jsx info isaugojimas serveryje
 app.post('/manikiuro-salonas', (req, res) => { //2 bendraujam su serveriu   //1-pati pradzia     <- http://localhost:3003/trees-manager api puslapio pavadinimas
   
@@ -61,7 +65,8 @@ app.post('/manikiuro-salonas', (req, res) => { //2 bendraujam su serveriu   //1-
 });
 ////////////////////////////
 ////////////////////////////
-//6.Istrinimo mygtukas is ManikiuroListoAtvaizdavimas.jsx kuris istrins visa jo info
+//deletle-mygtukas
+////6.Istrinimo mygtukas is ManikiuroListoAtvaizdavimas.jsx kuris istrins visa jo info///
 app.delete('/manikiuro-salonas/:id', (req, res) => { //delytinam is trees lnteles kurio id yra ?(kazkoks)
   const sql = `
       DELETE FROM salonas
@@ -76,7 +81,8 @@ app.delete('/manikiuro-salonas/:id', (req, res) => { //delytinam is trees lntele
 })
 ////////////////////////////
 ////////////////////////////
-//8
+//edit(redaguoti) mygtukas
+////8.Create paspaudus redaguoti(edit) Modale keiciami duomenys ir atvaizduojami Creat o liste/////
 //buvo tik saugojimas be nuotraukos MODALO
 app.put("/manikiuro-salonas/:id", (req, res) => {
 const sql = `

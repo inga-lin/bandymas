@@ -1,7 +1,7 @@
 import ManikiuroListoAtvaizdavimasFronte from "./Front/ManikiuroListoAtvaizdavimasFronte";
 import { useEffect, useState } from 'react';//2.-22. bendraujam su serveriu
 import axios from 'axios';//2.-22. bendraujam su serveriu
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";//susiimportint <Link>
 import '../Front.css'; 
 
 function Front() {
@@ -24,8 +24,10 @@ function Front() {
                 <nav className="navbar">
                     <a className="nav-linkk" href="/">Manikiūras Tau...</a>
                     <div className="navbar-man ">
-                        <Link className="nav-link" to="/">Home</Link>  {/*//a.butinas linkams (<Link className="nav-link" to="/">Home</Link>)*/}
-                        <Link className="nav-link" to="/sukurkideja">Sukurk idėją</Link>{/*//a.butinas linkams /leaf nurodo kaip i ji patekti i http://localhost:3000/leaf*/}
+                        <Link className="nav-link" to="/">Visi</Link>  {/*//a.butinas linkams (<Link className="nav-link" to="/">Home</Link>)*/}
+                        <Link className="nav-link" to="/klasikinis">Klasikinis</Link>{/*//a.butinas linkams /leaf nurodo kaip i ji patekti i http://localhost:3000/leaf*/}
+                        <Link className="nav-link" to="/prancūziškas">Prancūziškas</Link>
+                        <Link className="nav-link" to="/kombinuotas">Kombinuotas</Link>
                     </div>   
                 </nav>
             </div>

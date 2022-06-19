@@ -78,7 +78,8 @@ body{
 .list:hover {
     transform: scale(1.04,1.04); /*padidinam kvadratus kai uzvedam pelyte*/
     transition-duration:  0.1s;/*padidinam kvadratus kai uzvedam pelyte*/
-    background-color: rgb(255, 194, 215, 1);
+    background-color: var(--trecia-spalva);
+    box-shadow: rgba(0, 0, 0, 0.35) 20px 20px 20px;
 }
 
 

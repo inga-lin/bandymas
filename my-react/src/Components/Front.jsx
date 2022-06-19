@@ -53,7 +53,7 @@ function Front({ show }) {
  export default Front;
 
  /*BUVO BE RUSIUOJAMU <LINK>
- IR NEREIKEJO NIEKO PAPILDOMAI DARYTI SERVERIO DALYJE app.js kad atvaizduotu lista
+ IR NEREIKEJO NIEKO PAPILDOMAI DARYTI SERVERIO DALYJE app.js kad atvaizduotu lista jam uzrteko Read dalies serveryje
  CIA ATVAIZDAVOM TIK SARASA SUKURTA BACK.JSX
  import ManikiuroListoAtvaizdavimasFronte from "./Front/ManikiuroListoAtvaizdavimasFronte";
 import { useEffect, useState } from 'react';//2.-22. bendraujam su serveriu

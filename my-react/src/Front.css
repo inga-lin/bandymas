@@ -41,6 +41,25 @@ a {
 
 /*navbar*/
 
+/*search*/
+.search{
+   display: flex;
+   justify-content: end;
+}
+
+
+.search > input{
+    width: 39px;
+    box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px; 
+    border: 4px solid var(--antra-spalva);
+}
+
+.search > input:hover {
+    width: 150px;
+}
+
+
+/*search*/
 /*body*/
 
 .titleees {
@@ -104,3 +123,11 @@ body{
     }
  }
 /*body*/
+
+/*Išrūšuoti */
+.maziausia {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+/*Išrūšuoti */

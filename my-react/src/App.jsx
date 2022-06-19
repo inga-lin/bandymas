@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Front show="all"/>}/>{/*a.<Link> ir isrusiuoja//b.show yra propsas kuri perduodam i Front.jsx*/}
+        <Route index element={<Front show="all"/>}/>{/*a.<Link> ir isrusiuoja//a.show yra propsas kuri perduodam i Front.jsx*/}
         <Route path='admin' element={<Back/>}></Route>
         <Route path="klasikinis" element={<Front show="klasikinis"/>} /> {/*a.<Link> ir isrusiuoja//b.show yra propsas kuri perduodam i Front.jsx*/}
         <Route path="prancuziskas" element={<Front show="prancuziskas"/>} /> {/*a.<Link> ir isrusiuoja//b.show yra propsas kuri perduodam i Front.jsx*/}

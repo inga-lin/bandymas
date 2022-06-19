@@ -106,7 +106,7 @@ WHERE id = ?
 //FRONTO DALIS------------------->
 /////////////////////////
 //////////////////////////
-//a reikalingas <Link> kad all rodytu visus ManikiuroListoAtvaizdavimasFronte o :cat tik pagal atitinkama tipa
+//a reikalingas <Link> kad all rodytu visus ManikiuroListoAtvaizdavimasFronte o :manotipas tik pagal atitinkama tipa
 app.get('/manikiuro-list/all', (req, res) => { // <- http://localhost:3003/ 
   // SELECT column1, column2, ...
   // FROM table_name;       trees <- lenteles pavadinimas(issitrint komentara sita nes nepasileis)
@@ -122,28 +122,78 @@ app.get('/manikiuro-list/all', (req, res) => { // <- http://localhost:3003/
   });
 //+
 //a.biski pakeiciam Fronts.jsx useEffect
-//a reikalingas <Link> kad all rodytu visus ManikiuroListoAtvaizdavimasFronte o :cat tik pagal atitinkama tipas 'klasikinis','prancuziskas','kombinuotas'
+//a reikalingas <Link> kad all rodytu visus ManikiuroListoAtvaizdavimasFronte o :manotipas tik pagal atitinkama tipas 'klasikinis','prancuziskas','kombinuotas'
 //SELECT column_name(s) <- cia isvardinam abieju lenteliu stulpelius
-app.get("/manikiuro-list/:cat", (req, res) => { //cat yra parametras jeigu tai nera all iesko 'klasikinis','prancuziskas','kombinuotas' ir kazkuri is ju atidaro
-  if (req.params.cat != "all") {
+app.get("/manikiuro-list/:manotipas", (req, res) => { //manotipas yra parametras jeigu tai nera all iesko 'klasikinis','prancuziskas','kombinuotas' ir kazkuri is ju atidaro
+  if (req.params.manotipas != "all") {
   const sql = `
           SELECT
           *
           FROM salonas
           WHERE tipas = ?
       `;
-  con.query(sql, [['klasikinis','prancuziskas','kombinuotas'].indexOf(req.params.cat) + 1], (err, result) => { //b.mes gaunam zodzius ir juos paverciam i indeksa
+  con.query(sql, [['klasikinis','prancuziskas','kombinuotas'].indexOf(req.params.manotipas) + 1], (err, result) => { //b.mes gaunam zodzius ir juos paverciam i indeksa
     if (err) throw err;
     res.send(result);
   });
 }
 });
+
+
+
 /////////////////////////////
 //////////////////////////////
+//101 rusiavimas vardas ir kaina
+// SELECT column1, column2, ...
+// FROM table_name
+// ORDER BY column1, column2, ... ASC|DESC;
+app.get("/manikiuro-list-sorted/", (req, res) => {
+  
+  let sql;
+
+  if (req.query.by == 'vardas' && req.query.dir == 'asc'){
+    sql = `SELECT * FROM salonas ORDER BY vardas ASC`;
+  }
+  else if (req.query.by == 'vardas' && req.query.dir == 'desc'){
+    sql = `SELECT * FROM salonas ORDER BY vardas DESC`;
+  }
+  else if (req.query.by == 'kaina' && req.query.dir == 'asc'){
+    sql = `SELECT * FROM salonas ORDER BY kaina ASC`;
+  }
+  else{
+    sql = `SELECT * FROM salonas ORDER BY kaina DESC`;
+  }
+  con.query(
+    sql,
+    (err, results) => {
+      if (err) throw err;
+      res.send(results);
+    }
+  );
+});
+/////////////////////////////
+//////////////////////////////
+//202 search paiska pagal pavadinima name+
+// SELECT column1, column2, ...
+// FROM table_name
+// WHERE columnN LIKE pattern;
+// ka reiskia '%a' ir t.t. https://www.w3schools.com/sql/sql_like.asp
+app.get("/manikiuro-list-search", (req, res) => {
+  const sql = `
+        SELECT
+        *
+        FROM salonas
+        WHERE vardas LIKE '%${req.query.s}%'
+    `;
+  con.query(sql, (err, result) => {
+    if (err) throw err;
+    res.send(result);
+  });
+});
 
 
-
-
+/////////////////////////////
+//////////////////////////////
 app.listen(port, () => {//1-pati pradzia
   console.log(`Example app listening on port ${port}`);
 })

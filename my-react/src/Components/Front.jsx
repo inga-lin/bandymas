@@ -86,25 +86,25 @@ function Front({ show }) {
                     </div>
                 </div>
             </div>
-            <div className="container">
-                <div className="row">
+            <div className="container3">
+                <div className="rusiuojam ">
                     <div className="col-2">{/*101 rusiuojam su serveriu*/}
-                    <span>Išrūšuoti pagal vardą <small>server</small>:</span>
-                    <div className="arrows">
-                        <button type="button" className="manikiuro-buttons istrinti"  onClick={() => serverSort('vardas', 'asc')}>Vardas nuo abc</button>
-                        <button type="button" className="manikiuro-buttons istrinti"  onClick={() => serverSort('vardas', 'desc')}>Vardas nuo cba</button>
+                        <span>Išrūšuoti pagal vardą <small>server</small>:</span>
+                        <div className="rus-button">
+                            <button type="button" className="manikiuro-buttons istrinti"  onClick={() => serverSort('vardas', 'asc')}>Vardas nuo abc</button>
+                            <button type="button" className="manikiuro-buttons istrinti"  onClick={() => serverSort('vardas', 'desc')}>Vardas nuo cba</button>
                         </div>
                     </div>
                     <div className="col-2">{/*101 rusiuojam su serveriu*/}
-                    <span>Išrūšuoti pagal kainą <small>server</small>:</span>
-                        <div className="arrows">
-                        <button type="button" className="manikiuro-buttons istrinti"  onClick={() => serverSort('kaina', 'asc')}>Nuo maziausios kainos</button>
-                        <button type="button" className="manikiuro-buttons istrinti"  onClick={() => serverSort('kaina', 'desc')}>Nuo didziausios kainos</button>
-                        </div>
-                    </div> 
+                        <span>Išrūšuoti pagal kainą <small>server</small>:</span>
+                            <div className="rus-button">
+                                <button type="button" className="manikiuro-buttons istrinti"  onClick={() => serverSort('kaina', 'asc')}>Nuo maziausios kainos</button>
+                                <button type="button" className="manikiuro-buttons istrinti"  onClick={() => serverSort('kaina', 'desc')}>Nuo didziausios kainos</button>
+                            </div>
+                         </div> 
+                    </div>
                 </div>
             </div>
-      </div>
     </>
     )
 }

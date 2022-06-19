@@ -84,6 +84,7 @@ body{
     flex-wrap: wrap;
     padding: 30px;
     align-content: flex-start;
+    margin-bottom: 100px;
 }
 
 .list {
@@ -125,8 +126,25 @@ body{
 /*body*/
 
 /*Išrūšuoti */
+.container3{
+    background-image: var(--penkta-spalva);
+    border: 2px solid var(--antra-spalva);
+    position: fixed;
+    bottom: 0;
+    z-index: 20;
+    width: 100%;
+}
+.rusiuojam {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+}
+
+.rus-button {
+    display: flex;
+    gap: 10px;
+}
 .maziausia {
-  background-color: red;
   width: 100px;
   height: 100px;
 }

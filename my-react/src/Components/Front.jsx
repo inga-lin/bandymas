@@ -60,7 +60,7 @@ import { useEffect, useState } from 'react';//2.-22. bendraujam su serveriu
 import axios from 'axios';//2.-22. bendraujam su serveriu
 import '../Front.css'; 
 
-function Front({ show }) {
+function Front() {
 
     const [manikiuras, setManikiuras] = useState([]);//2.-22.
     
